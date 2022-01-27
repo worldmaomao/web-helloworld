@@ -14,9 +14,9 @@ FROM scratch
 
 LABEL Name=web-hellword Version=${VERSION}
 
-COPY --from=builder $GOPATH/src/app/cmd /web-helloworld
+COPY --from=builder /go/src/app/cmd /web-helloworld
 
-EXPOSE 48080
+EXPOSE 8080
 
 WORKDIR /web-helloworld/
 
