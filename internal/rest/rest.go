@@ -24,7 +24,7 @@ func ping(c *gin.Context) {
 }
 
 func index(c *gin.Context) {
-	msg := "hello! this is used for view ip."
+	msg := "Hello! This is used for view ip of pod."
 	var hostIp []string
 	netInterfaces, err := net.Interfaces()
 	if err != nil {
@@ -45,5 +45,5 @@ func index(c *gin.Context) {
 	}
 
 	hostIpText := strings.Join(hostIp, "\r\n")
-	c.String(200, "%s\r\n%s", msg, hostIpText)
+	c.String(200, "%s\n\r\n%s\r\n\n%s", msg, hostIpText, "version:1.0.0")
 }
